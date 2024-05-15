@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'poet';
+    src: url('poetsenone-regular-webfont.woff2') format('woff2'),
+         url('poetsenone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0;
+    scroll-behavior: smooth;
+    background-color: white;
+    font-family: poet; 
+}
+
+.hero{
+    background-color: #2fd91d;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title h1{
+    color:  #b04bed;
+    font-size: 120px;
+    -webkit-text-stroke: 3px black;
+    font-weight: bold;
+}
+.title h3{
+    color: black;
+    text-align: right;
+    font-size: 30px;
+    margin-top: -20px;
+    
+}
+.title h3 span{
+    color: #b04bed;
+}
+.main_img img{
+    width: 550px;
+    animation: shake 10s infinite ;
+}
+.hero2{
+ max-width: 100vw;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.hero_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex-direction: column;
+}
+.text{
+    display: flex;
+    max-width: 80%;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 50px;
+    text-align: center;
+}
+.text span{
+    color: #b04bed;
+}
+.hero_right .buy_btn{
+    text-decoration: none;
+    border: solid 8px black;
+    color: white;
+    background-color: #b04bed ;
+    padding: 10px 80px;
+    font-size: 50px;
+    margin-top: 40px;
+    transform: rotate(8deg);
+    animation: shake .1s infinite ;
+}
+@keyframes shake{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform:  scale(1.05);
+    }
+    100%{
+        transform:  scale(1);
+    }
+}
+.social{
+    margin-top: 50px;
+}
+.social ul{
+    display: flex;
+    list-style-type: none;
+
+}
+.social ul li a {
+    padding: 10px 15px;
+    background-color: black;
+    margin: 20px;
+    color: #b04bed;
+    font-size: 40px;
+
+}
+.social ul li:nth-child(1){
+    transform: rotate(8deg);
+}
+.social ul li:nth-child(2){
+    transform: rotate(-6deg);
+}
+.social ul li:nth-child(3){
+    transform: rotate(15deg);
+}
+.announce_bar{
+   height: 70px;
+   border: solid 7px black;
+   background-color: #5a1b81;
+   display: flex;
+   width: 120vw;
+   justify-content: center;
+   align-items: center;
+
+}
+.announce_bar P{ margin-right: 50PX;
+    font-size: 40px;
+    color: white
+    ;
+    animation: translate 7s infinite linear;
+}
+@keyframes translate{
+    from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-1000%);
+      }
+}
