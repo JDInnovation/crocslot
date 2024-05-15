@@ -93,17 +93,17 @@ body {
     padding: 10px 80px;
     font-size: 50px;
     margin-top: 40px;
-    transform: rotate(8deg);
-    animation: shake .2s infinite ;
+    transform: rotate(6deg);
+    animation: shake .3s infinite ;
 }
 @keyframes shake{
     0%{
         transform: scale(1);
     }
-    20%{
-        transform:  scale(1.05);
+    50%{
+        transform:  scale(1.02);
     }
-    40%{
+    10%{
         transform:  scale(1);
     }
 }
