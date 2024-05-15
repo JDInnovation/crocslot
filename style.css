@@ -94,7 +94,7 @@ body {
     font-size: 50px;
     margin-top: 40px;
     transform: rotate(8deg);
-    animation: shake .1s infinite ;
+    animation: shake .2s infinite ;
 }
 @keyframes shake{
     0%{
