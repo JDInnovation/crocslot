@@ -100,10 +100,10 @@ body {
     0%{
         transform: scale(1);
     }
-    50%{
+    20%{
         transform:  scale(1.05);
     }
-    100%{
+    40%{
         transform:  scale(1);
     }
 }
