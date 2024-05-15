@@ -8,6 +8,11 @@
     <title>CrocSlot</title>
 </head>
 <body>
+    <div class="wallet">
+<div class="clipboard">
+    <input type="text" value="5z3EqYQo9HiCEs3R84RCDMu2n7anpDMxRhdK8PSWmrRC" id="myInput"> <button onclick="myFunction()">Copy </button>
+</div>
+    </div>
     <section>
      <div class="hero">
             <div class="title">
@@ -71,8 +76,9 @@
         </div>
         <div class="token2">
             <div class="square">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, cum officia, dignissimos exercitationem 
-                    odio in aliquid adipisci dolorem accusamus dicta facilis culpa, vero ipsa dolorum?</p>
+                <p>Croc, the crocodile, was addicted to slot machines. He bet it all, lost, and ended up bankrupt. Now, he dreams of creating his own 
+                    slot machine and helping the holders 
+                    who once helped him rise again. He waits patiently until it reaches a 1 billion market cap to make his dream come true.</p>
 
             
 
@@ -88,11 +94,34 @@
         <img  src="/images/dollar-symbol.png" alt="">
         <img  src="/images/seven.png" alt="">
         <img  src="/images/diamond.png" alt="">
-        <img  src="/images/cherry.png" alt="">
+ 
     </div>
     </section>
     <footer>
 
     </footer>
+    <script>
+        function myFunction() {
+          // Get the text field
+          var copyText = document.getElementById("myInput");
+        
+          // Select the text field
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); // For mobile devices
+        
+          // Copy the text inside the text field
+          navigator.clipboard.writeText(copyText.value);
+          
+          // Alert the copied text
+          alert("Copied the text: " + copyText.value);
+
+        }
+        </script>
+        <script>
+            document.getElementById("myInput").addEventListener("mousedown", function(event){
+              event.preventDefault();
+            });
+            </script>
+        
 </body>
 </html>
