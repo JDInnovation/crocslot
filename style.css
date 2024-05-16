@@ -361,6 +361,7 @@ body {
     background-color: #70BF5D;
     border: 2px solid #CA49F3;
     overflow: hidden;
+    margin-top: 50px;
 }
 
 #player {
