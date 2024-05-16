@@ -442,5 +442,6 @@ body {
 .square{
     width: 100%;
     padding: 55px;
+    font-size: 15px;
 }
 }
