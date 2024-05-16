@@ -463,7 +463,7 @@ body {
 }
 .game-container{
     width: 90vw;
-    height: 400px;
+    height: 70vh;
 }
 .tokenomics{
     height: 80vh;
@@ -555,5 +555,11 @@ body {
     left: 1550px;
     width: 45px;
     animation-delay: 1.3s;
+}
+.announce_bar P{
+    font-size: 30px;
+}
+.announce_bar{
+    height: 50px;
 }
 }
