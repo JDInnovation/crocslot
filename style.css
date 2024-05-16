@@ -103,7 +103,7 @@ body {
     50%{
         transform:  scale(1.05);
     }
-    10%{
+    100%{
         transform:  scale(1);
     }
 }
@@ -142,6 +142,7 @@ body {
    align-items: center;
    z-index: 3;
    position: relative;
+   margin-left: -20px;
 
 }
 .announce_bar P{ margin-right: 50PX;
@@ -207,7 +208,7 @@ body {
     position: absolute;
     top: -70px;
     left: 200px;
-    width: 60px;
+    width: 80px;
     animation-delay: 1.5s;
 }
 .symbol img:nth-child(3){
@@ -215,7 +216,7 @@ body {
     position: absolute;
     top: -70px;
     left: 350px;
-    width: 60px;
+    width: 50px;
     animation-delay: .2s;
 }
 .symbol img:nth-child(4){
@@ -223,7 +224,7 @@ body {
     position: absolute;
     top: -70px;
     left: 500px;
-    width: 60px;
+    width: 40px;
     animation-delay: 1s;
 }
 .symbol img:nth-child(5){
@@ -231,7 +232,7 @@ body {
     position: absolute;
     top: -70px;
     left: 650px;
-    width: 60px;
+    width: 20px;
     animation-delay: 4s;
 }
 .symbol img:nth-child(6){
@@ -247,7 +248,7 @@ body {
     position: absolute;
     top: -70px;
     left: 950px;
-    width: 60px;
+    width: 30px;
     animation-delay: 1.2s;
 }
 .symbol img:nth-child(8){
@@ -255,7 +256,7 @@ body {
     position: absolute;
     top: -70px;
     left: 1100px;
-    width: 60px;
+    width: 50px;
     animation-delay: 2s;
 }
 .symbol img:nth-child(9){
@@ -271,7 +272,7 @@ body {
     position: absolute;
     top: -70px;
     left: 1400px;
-    width: 60px;
+    width: 70px;
     animation-delay: 0.8s;
 }
 .symbol img:nth-child(11){
@@ -279,7 +280,7 @@ body {
     position: absolute;
     top: -70px;
     left: 1550px;
-    width: 60px;
+    width: 45px;
     animation-delay: 1.3s;
 }
 @keyframes slotani {
@@ -326,9 +327,6 @@ body {
     cursor: pointer;
     font-family: poet;
 }
-<<<<<<< HEAD
 .roadmap{
     height: 100vh;
 }
-=======
->>>>>>> 7068a0dd40bf97d322dec923e9ee431fb0ff3593
