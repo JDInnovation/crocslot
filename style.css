@@ -433,5 +433,8 @@ body {
 .wallet .clipboard{
     width: 90vw;
 }
+.wallet{
+    top: 85vh;
+}
 
 }
