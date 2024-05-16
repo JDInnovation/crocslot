@@ -326,3 +326,6 @@ body {
     cursor: pointer;
     font-family: poet;
 }
+.roadmap{
+    height: 100vh;
+}
