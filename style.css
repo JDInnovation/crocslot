@@ -450,7 +450,7 @@ body {
     width: 90vw;
 }
 .wallet{
-    top: 90vh;
+    top: calc(100vh+10px);
 }
 .token_title{
     font-size: 40px;
