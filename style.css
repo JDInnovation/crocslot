@@ -436,5 +436,11 @@ body {
 .wallet{
     top: 85vh;
 }
-
+.token_title{
+    font-size: 60px;
+}
+.square{
+    width: 100%;
+    padding: 55px;
+}
 }
