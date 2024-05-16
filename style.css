@@ -298,6 +298,17 @@ body {
   
     }
 }
+@keyframes slotani_mobile {
+    from{
+        transform: translateY(0px) translateX(0px);
+       
+
+    }
+    to{
+        transform: translateY(90vh) translateX(5vw);
+  
+    }
+}
 .wallet{
     position: sticky;
     display: flex;
@@ -456,5 +467,8 @@ body {
 }
 .tokenomics{
     height: 80vh;
+}
+.symbol img{
+    animation: slotani_mobile;
 }
 }
