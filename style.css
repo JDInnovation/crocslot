@@ -285,11 +285,13 @@ body {
 }
 @keyframes slotani {
     from{
-        transform: translateY(0px);
+        transform: translateY(0px) translateX(0px);
+       
 
     }
     to{
-        transform: translateY(105vh);
+        transform: translateY(110vh) translateX(5vw);
+  
     }
 }
 .wallet{
@@ -329,4 +331,77 @@ body {
 }
 .roadmap{
     height: 100vh;
+}
+
+
+
+
+.game-container {
+    position: relative;
+    width: 500px;
+    height: 700px;
+    background-color: #70BF5D;
+    border: 2px solid #CA49F3;
+    overflow: hidden;
+}
+
+#player {
+    position: absolute;
+    bottom: 20px;
+    left: 220px;
+    width: 128px;
+    height: 160px;
+    background: url("/images/crocslot_animated_3.gif") no-repeat center center / cover;
+    cursor: grab;
+}
+
+.obstacle, .collectible {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+
+.obstacle {
+    background: url("/images/desvia.png") no-repeat center center / cover;
+}
+
+.collectible {
+    background: url("/images/personagem.png") no-repeat center center / cover;
+}
+
+.score, .high-score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: white;
+}
+
+.high-score {
+    left: 250px;
+}
+
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #CA49F3;
+    border: none;
+    color: white;
+    z-index: 1;
+}
+
+#game-over {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: white;
+    display: none;
+    z-index:2;
 }
