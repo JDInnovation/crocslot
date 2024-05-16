@@ -405,3 +405,18 @@ body {
     display: none;
     z-index:2;
 }
+@media screen and (max-width: 900px){
+    .title h1{
+        font-size: 60px;
+    }
+    .title h3{
+        font-size: 20px;
+        margin-top: -10px;
+    }
+    .hero2{
+        flex-direction: column;
+    }
+    .main_img img{
+        width: 300px;
+    }
+}
