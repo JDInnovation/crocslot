@@ -39,7 +39,7 @@ body {
 
 .hero {
     background-color: #70bf5d;
-    min-height: calc(100vh + 50px);
+    min-height:calc(100vh);
     position: relative;
     display: flex;
     align-items: center;
@@ -511,7 +511,7 @@ body {
     }
 
     .wallet {
-        top: calc(100vh+10px);
+        top: 90vh;
     }
 
     .token_title {
