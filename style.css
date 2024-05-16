@@ -330,7 +330,11 @@ body {
     font-family: poet;
 }
 .roadmap{
-    height: 100vh;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
 }
 
 
@@ -339,7 +343,7 @@ body {
 .game-container {
     position: relative;
     width: 500px;
-    height: 700px;
+    height: 500px;
     background-color: #70BF5D;
     border: 2px solid #CA49F3;
     overflow: hidden;
@@ -419,9 +423,7 @@ body {
     .main_img img{
         width: 300px;
     }
-    .roadmap{
-        z-index: 999;
-    }
+
     .text{
         font-size: 30px;
     }
@@ -443,5 +445,9 @@ body {
     width: 100%;
     padding: 55px;
     font-size: 15px;
+}
+.game-container{
+    width: 90vw;
+    height: 400px;
 }
 }

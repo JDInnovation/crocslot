@@ -193,7 +193,7 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
             </script>
             <script>
 
-        document.addEventListener('DOMContentLoaded', () => {
+                document.addEventListener('DOMContentLoaded', () => {
             const gameContainer = document.querySelector('.game-container');
             const player = document.getElementById('player');
             const obstacle = document.getElementById('obstacle');
@@ -202,12 +202,12 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
             const highScoreDisplay = document.getElementById('high-score');
             const startButton = document.getElementById('start-button');
             const gameOverDisplay = document.getElementById('game-over');
-            let playerX = 220;
-            const playerY = 580;
+            let playerX = gameContainer.clientWidth / 2 - 64; // Center player
+            const playerY = gameContainer.clientHeight - 180;
             const playerSpeed = 10;
             let obstacleY = -120;
             let collectibleY = -120;
-            let objectSpeed = 5;
+            let objectSpeed = 8;
             let score = 0;
             let highScore = 0;
             let isDragging = false;
@@ -218,7 +218,7 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
 
             function movePlayer(event) {
                 if (!isGameActive) return;
-                switch(event.key) {
+                switch (event.key) {
                     case 'ArrowLeft':
                         playerX -= playerSpeed;
                         if (playerX < 0) playerX = 0;
@@ -236,13 +236,13 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
             function startDrag(event) {
                 if (!isGameActive) return;
                 isDragging = true;
-                dragOffsetX = event.clientX - player.getBoundingClientRect().left;
+                dragOffsetX = (event.touches ? event.touches[0].clientX : event.clientX) - player.getBoundingClientRect().left;
                 player.style.cursor = 'grabbing';
             }
 
             function dragPlayer(event) {
                 if (!isGameActive || !isDragging) return;
-                playerX = event.clientX - dragOffsetX - gameContainer.getBoundingClientRect().left;
+                playerX = (event.touches ? event.touches[0].clientX : event.clientX) - dragOffsetX - gameContainer.getBoundingClientRect().left;
                 if (playerX < 0) playerX = 0;
                 if (playerX > gameContainer.clientWidth - player.clientWidth) {
                     playerX = gameContainer.clientWidth - player.clientWidth;
@@ -260,7 +260,7 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
                 obstacleY += objectSpeed;
                 if (obstacleY > gameContainer.clientHeight) {
                     obstacleY = -120;
-                    obstacle.style.left = `${Math.random() * (gameContainer.clientWidth - obstacle.clientWidth)}px`;
+                    obstacle.style.left = `${getRandomXPosition(obstacle.clientWidth)}px`;
                 }
                 obstacle.style.top = `${obstacleY}px`;
 
@@ -281,7 +281,7 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
                 collectibleY += objectSpeed;
                 if (collectibleY > gameContainer.clientHeight) {
                     collectibleY = -120;
-                    collectible.style.left = `${Math.random() * (gameContainer.clientWidth - collectible.clientWidth)}px`;
+                    collectible.style.left = `${getRandomXPosition(collectible.clientWidth)}px`;
                 }
                 collectible.style.top = `${collectibleY}px`;
 
@@ -319,8 +319,8 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
                 obstacleY = -120;
                 collectibleY = -120;
                 objectSpeed = 5;
-                obstacle.style.left = `${Math.random() * (gameContainer.clientWidth - obstacle.clientWidth)}px`;
-                collectible.style.left = `${Math.random() * (gameContainer.clientWidth - collectible.clientWidth)}px`;
+                obstacle.style.left = `${getRandomXPosition(obstacle.clientWidth)}px`;
+                collectible.style.left = `${getRandomXPosition(collectible.clientWidth)}px`;
             }
 
             function increaseSpeed() {
@@ -335,8 +335,11 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
                 isGameActive = true;
                 document.addEventListener('keydown', movePlayer);
                 player.addEventListener('mousedown', startDrag);
+                player.addEventListener('touchstart', startDrag);
                 document.addEventListener('mousemove', dragPlayer);
+                document.addEventListener('touchmove', dragPlayer);
                 document.addEventListener('mouseup', stopDrag);
+                document.addEventListener('touchend', stopDrag);
                 requestAnimationFrame(moveObstacle);
                 requestAnimationFrame(moveCollectible);
                 speedInterval = setInterval(increaseSpeed, 12000); // Increase speed every 12 seconds
@@ -346,15 +349,23 @@ crazyButtons.forEach(button => button.addEventListener('mouseenter', goCrazy));
                 isGameActive = false;
                 document.removeEventListener('keydown', movePlayer);
                 player.removeEventListener('mousedown', startDrag);
+                player.removeEventListener('touchstart', startDrag);
                 document.removeEventListener('mousemove', dragPlayer);
+                document.removeEventListener('touchmove', dragPlayer);
                 document.removeEventListener('mouseup', stopDrag);
+                document.removeEventListener('touchend', stopDrag);
                 clearInterval(speedInterval);
                 gameOverDisplay.style.display = 'block';
                 startButton.style.display = 'block';
             }
 
-            startButton.addEventListener('click', startGame);
-        });
+            function getRandomXPosition(objectWidth) {
+                const minX = 0;
+                const maxX = gameContainer.clientWidth - objectWidth;
+                return Math.random() * (maxX - minX) + minX;
+            }
+
+            startButton.addEventListener('click', startGame);});
     </script>
 
 
