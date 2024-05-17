@@ -4,23 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const player = document.getElementById('player');
     const obstacle = document.getElementById('obstacle');
     const collectible = document.getElementById('collectible');
+    const powerUp = document.getElementById('power-up');
     const scoreDisplay = document.getElementById('score');
     const highScoreDisplay = document.getElementById('high-score');
+    const levelDisplay = document.getElementById('level');
     const startButton = document.getElementById('start-button');
     const gameOverDisplay = document.getElementById('game-over');
+
     let playerX = gameContainer.clientWidth / 2 - 64; // Center player
     const playerY = gameContainer.clientHeight - 180;
     const playerSpeed = 10;
     let obstacleY = -120;
     let collectibleY = -120;
+    let powerUpY = -120;
     let objectSpeed = 8;
     let score = 0;
     let highScore = 0;
+    let level = 1;
     let isDragging = false;
     let dragOffsetX = 0;
     let gameInterval;
     let speedInterval;
     let isGameActive = false;
+    let collectibleStreak = 0;
+    let isBonusActive = false;
 
     function movePlayer(event) {
         if (!isGameActive) return;
@@ -71,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         obstacle.style.top = `${obstacleY}px`;
 
         if (isCollision(player, obstacle)) {
-            score -= 20;
+            score -= 75;
             if (score < 0) score = 0;
             updateScore();
             if (score === 0) {
@@ -92,12 +99,35 @@ document.addEventListener('DOMContentLoaded', () => {
         collectible.style.top = `${collectibleY}px`;
 
         if (isCollision(player, collectible)) {
-            score += 10;
+            collectibleStreak++;
+            score += isBonusActive ? 50 : 25;
+            if (collectibleStreak >= 5 && !isBonusActive) {
+                activateBonus();
+            }
             updateScore();
             collectibleY = -120;
+            collectible.style.left = `${getRandomXPosition(collectible.clientWidth)}px`;
         }
 
         requestAnimationFrame(moveCollectible);
+    }
+
+    function movePowerUp() {
+        if (!isGameActive) return;
+        powerUpY += objectSpeed;
+        if (powerUpY > gameContainer.clientHeight) {
+            powerUpY = -120;
+            powerUp.style.left = `${getRandomXPosition(powerUp.clientWidth)}px`;
+        }
+        powerUp.style.top = `${powerUpY}px`;
+
+        if (isCollision(player, powerUp)) {
+            activatePowerUp();
+            powerUpY = -120;
+            powerUp.style.left = `${getRandomXPosition(powerUp.clientWidth)}px`;
+        }
+
+        requestAnimationFrame(movePowerUp);
     }
 
     function isCollision(player, object) {
@@ -121,17 +151,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetGame() {
         score = 0;
+        collectibleStreak = 0;
+        isBonusActive = false;
+        level = 1;
         updateScore();
+        updateLevel();
         obstacleY = -120;
         collectibleY = -120;
-        objectSpeed = 5;
+        powerUpY = -120;
+        objectSpeed = 8;
         obstacle.style.left = `${getRandomXPosition(obstacle.clientWidth)}px`;
         collectible.style.left = `${getRandomXPosition(collectible.clientWidth)}px`;
+        powerUp.style.left = `${getRandomXPosition(powerUp.clientWidth)}px`;
     }
 
     function increaseSpeed() {
         if (!isGameActive) return;
         objectSpeed *= 1.1;
+        level++;
+        updateLevel();
+    }
+
+    function updateLevel() {
+        levelDisplay.textContent = `Level: ${level}`;
     }
 
     function startGame() {
@@ -148,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('touchend', stopDrag);
         requestAnimationFrame(moveObstacle);
         requestAnimationFrame(moveCollectible);
+        requestAnimationFrame(movePowerUp);
         speedInterval = setInterval(increaseSpeed, 12000); // Increase speed every 12 seconds
     }
 
@@ -169,6 +212,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const minX = 0;
         const maxX = gameContainer.clientWidth - objectWidth;
         return Math.random() * (maxX - minX) + minX;
+    }
+
+    function activateBonus() {
+        isBonusActive = true;
+        objectSpeed *= 1.25;
+        setTimeout(() => {
+            isBonusActive = false;
+            objectSpeed /= 1.25;
+            collectibleStreak = 0;
+        }, 3000);
+    }
+
+    function activatePowerUp() {
+        // Efeito do power-up (por exemplo, invencibilidade por 5 segundos)
+        isBonusActive = true;
+        setTimeout(() => {
+            isBonusActive = false;
+        }, 5000);
     }
 
     startButton.addEventListener('click', startGame);
