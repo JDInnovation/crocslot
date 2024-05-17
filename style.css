@@ -49,13 +49,13 @@ body {
 
 .title h1 {
     color: #b04bed;
-    font-size: 120px;
+    font-size: 150px;
     /*  -webkit-text-stroke: 6px black; */
     font-weight: bolder;
     font-family: poet;
     letter-spacing: 0PX;
     paint-order: stroke fill;
-    -webkit-text-stroke-width: 31px;
+    -webkit-text-stroke-width: 38px;
     -webkit-text-stroke-color: black;
 
 }
