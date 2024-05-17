@@ -38,12 +38,13 @@ body {
 }
 
 .hero {
-    background-color: #70bf5d;
+   
     min-height:calc(100vh);
     position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
+    z-index: 2;
 }
 
 .title h1 {
@@ -195,7 +196,7 @@ body {
 
 .tokenomics {
     height: 100vh;
-    position: relative;
+    
 }
 
 .token_title {
@@ -236,132 +237,6 @@ body {
     border-radius: 60% 40% 40% 30%;
     text-align: center;
     z-index: 2;
-}
-
-.symbol img:nth-child(1) {
-    animation: slotani 6s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 50px;
-    width: 60px;
-    animation-delay: 1s;
-}
-
-.symbol img:nth-child(2) {
-    animation: slotani 3s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 200px;
-    width: 80px;
-    animation-delay: 1.5s;
-}
-
-.symbol img:nth-child(3) {
-    animation: slotani 5.2s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 350px;
-    width: 50px;
-    animation-delay: .2s;
-}
-
-.symbol img:nth-child(4) {
-    animation: slotani 5.4s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 500px;
-    width: 40px;
-    animation-delay: 1s;
-}
-
-.symbol img:nth-child(5) {
-    animation: slotani 5s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 650px;
-    width: 20px;
-    animation-delay: 4s;
-}
-
-.symbol img:nth-child(6) {
-    animation: slotani 5.9s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 800px;
-    width: 60px;
-    animation-delay: 1.1s;
-}
-
-.symbol img:nth-child(7) {
-    animation: slotani 4.7s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 950px;
-    width: 30px;
-    animation-delay: 1.2s;
-}
-
-.symbol img:nth-child(8) {
-    animation: slotani 5s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 1100px;
-    width: 50px;
-    animation-delay: 2s;
-}
-
-.symbol img:nth-child(9) {
-    animation: slotani 5s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 1250px;
-    width: 60px;
-    animation-delay: 1.3s;
-}
-
-.symbol img:nth-child(10) {
-    animation: slotani 3.7s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 1400px;
-    width: 70px;
-    animation-delay: 0.8s;
-}
-
-.symbol img:nth-child(11) {
-    animation: slotani 5.2s linear infinite;
-    position: absolute;
-    top: -70px;
-    left: 1550px;
-    width: 45px;
-    animation-delay: 1.3s;
-}
-
-@keyframes slotani {
-    from {
-        transform: translateY(0px) translateX(0px);
-
-
-    }
-
-    to {
-        transform: translateY(110vh) translateX(5vw);
-        rotate: 30deg;
-
-    }
-}
-
-@keyframes slotani_mobile {
-    from {
-        transform: translateY(0px) translateX(0px);
-
-
-    }
-
-    to {
-        transform: translateY(86vh) translateX(5vw);
-
-    }
 }
 
 .wallet {
@@ -463,105 +338,6 @@ body {
 
     .tokenomics {
         height: 80vh;
-    }
-
-    .symbol img:nth-child(1) {
-        animation: slotani_mobile 6s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 50px;
-        width: 60px;
-        animation-delay: 1s;
-    }
-
-    .symbol img:nth-child(2) {
-        animation: slotani_mobile 3s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 200px;
-        width: 80px;
-        animation-delay: 1.5s;
-    }
-
-    .symbol img:nth-child(3) {
-        animation: slotani_mobile 5.2s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 350px;
-        width: 50px;
-        animation-delay: .2s;
-    }
-
-    .symbol img:nth-child(4) {
-        animation: slotani_mobile 5.4s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 500px;
-        width: 40px;
-        animation-delay: 1s;
-    }
-
-    .symbol img:nth-child(5) {
-        animation: slotani_mobile 5s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 650px;
-        width: 20px;
-        animation-delay: 4s;
-    }
-
-    .symbol img:nth-child(6) {
-        animation: slotani_mobile 5.9s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 800px;
-        width: 60px;
-        animation-delay: 1.1s;
-    }
-
-    .symbol img:nth-child(7) {
-        animation: slotani_mobile 4.7s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 950px;
-        width: 30px;
-        animation-delay: 1.2s;
-    }
-
-    .symbol img:nth-child(8) {
-        animation: slotani_mobile 5s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 1100px;
-        width: 50px;
-        animation-delay: 2s;
-    }
-
-    .symbol img:nth-child(9) {
-        animation: slotani_mobile 5s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 1250px;
-        width: 60px;
-        animation-delay: 1.3s;
-    }
-
-    .symbol img:nth-child(10) {
-        animation: slotani_mobile 3.7s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 1400px;
-        width: 70px;
-        animation-delay: 0.8s;
-    }
-
-    .symbol img:nth-child(11) {
-        animation: slotani_mobile 5.2s linear infinite;
-        position: absolute;
-        top: -70px;
-        left: 1550px;
-        width: 45px;
-        animation-delay: 1.3s;
     }
 
     .announce_bar P {
