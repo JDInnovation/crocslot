@@ -251,7 +251,7 @@
     }
 
     to {
-        transform: translateY(120vh) rotate(90deg) ;
+        transform: translateY(110vh) rotate(90deg) ;
        
         
 
@@ -265,7 +265,7 @@
     }
 
     to {
-        transform: translateY(120vh) rotate(-90deg) ;
+        transform: translateY(110vh) rotate(-90deg) ;
        
         
 
