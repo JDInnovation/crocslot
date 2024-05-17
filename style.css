@@ -200,7 +200,7 @@ body {
 }
 
 .tokenomics {
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -288,6 +288,16 @@ body {
     flex-direction: column;
     align-items: center;
 
+}
+.cards{
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px;
+}
+.cards img{
+    width: 400px;
 }
 
 @media screen and (max-width: 900px) {
