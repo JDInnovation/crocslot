@@ -52,6 +52,7 @@ body {
     -webkit-text-stroke: 3px black;
     font-weight: bolder;
     font-family: every;
+
 }
 
 .title h3 {
@@ -337,6 +338,7 @@ body {
 
     to {
         transform: translateY(110vh) translateX(5vw);
+        rotate: 30deg;
 
     }
 }
