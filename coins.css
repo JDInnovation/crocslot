@@ -197,6 +197,48 @@
     width: 50px;
     animation-delay: 1.8s;
 }
+.symbol2 img:nth-child(12) {
+    animation: slotani 4s linear infinite;
+    position: absolute;
+    top: -70px;
+    left: 1550px;
+    width: 45px;
+    animation-delay: 0.5s;
+}
+
+.symbol2 img:nth-child(13) {
+    animation: slotani 4s linear infinite;
+    position: absolute;
+    top: -70px;
+    left: 1700px;
+    width: 80px;
+    animation-delay: 1.5s;
+}
+
+.symbol2 img:nth-child(14) {
+    animation: slotani_left 6s linear infinite;
+    position: absolute;
+    top: -70px;
+    left: 1850px;
+    width: 50px;
+    animation-delay: 1.8s;
+}
+.symbol2 img:nth-child(15) {
+    animation: slotani_left 6s linear infinite;
+    position: absolute;
+    top: -70px;
+    left: 2000px;
+    width: 50px;
+    animation-delay: 1.8s;
+}
+.symbol2 img:nth-child(16) {
+    animation: slotani_left 5s linear infinite;
+    position: absolute;
+    top: -70px;
+    left: 2050px;
+    width: 50px;
+    animation-delay: 1.8s;
+}
 .symbol2{
     z-index: 0;
 }
