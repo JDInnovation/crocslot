@@ -98,16 +98,19 @@ body {
     max-width: 90%;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 70px;
+    color: black;
+    font-size: 25px;
     text-align: center;
-    background-color: #b04bed;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: poet;
+
 /*     -webkit-text-stroke-width: 20px;
     -webkit-text-stroke-color: rgb(255, 255, 255);
     paint-order: stroke fill; 
     text-shadow: 2px 3px 2px rgb(62, 61, 61); */
-    border: solid 8px black;
-    padding: 20px 5px;
+
+   
 }
 
 .text span {
@@ -119,8 +122,8 @@ body {
     border: solid 8px black;
     color: white;
     background-color: #b04bed;
-    padding: 10px 80px;
-    font-size: 50px;
+    padding: 30px 100px;
+    font-size: 60px;
     margin-top: 40px;
     transform: rotate(8deg);
     animation: shake .1s infinite;
@@ -301,6 +304,29 @@ body {
 }
 .cards img{
     width: 400px;
+}
+.cards_token{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px;
+    align-items: center;
+}
+.card_token{
+    width: 30vw;
+    background-color: #b04bed;
+    border: solid 4px black;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 60px 20% 50px 20px;
+}
+.card_token h1{
+    color: white;
 }
 
 @media screen and (max-width: 900px) {
