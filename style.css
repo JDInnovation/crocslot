@@ -236,16 +236,17 @@ body {
     display: flex;
     justify-content: center;
     padding: 40px;
+    align-items: center;
 }
 
 .square {
     width: 60%;
-    height: 80%;
+    height: 100%;
     background-color: white;
     font-size: 30px;
     padding: 70px;
-    border: solid 10px;
-    border-radius: 60% 40% 40% 30%;
+    border: solid 7px;
+    border-radius: 40% 40% 40% 30%;
     text-align: center;
     z-index: 2;
 }
@@ -311,11 +312,12 @@ body {
     justify-content: center;
     padding: 30px 0px;
     align-items: center;
+    margin-left: 30px;
 }
 .card_token{
     width: 30vw;
     background-color: #b04bed;
-    border: solid 4px black;
+    border: solid 7px black;
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
@@ -323,7 +325,19 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 20px;
-    border-radius: 60px 20% 50px 20px;
+   
+}
+.card_token:nth-child(1){
+    border-radius: 60px 50% 50px 20px;
+}
+.card_token:nth-child(2){
+    border-radius: 70px 65% 40px 20px;
+}
+.card_token:nth-child(3){
+    border-radius: 45% 60% 50px 30px;
+}
+.card_token:nth-child(4){
+    border-radius: 20px 50% 50px 60px;
 }
 .card_token h1{
     color: white;
