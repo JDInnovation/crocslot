@@ -98,13 +98,19 @@ body {
     max-width: 80%;
     justify-content: center;
     align-items: center;
-    color: #75df5a;
+    color: black;
     font-size: 70px;
     text-align: center;
-    -webkit-text-stroke-width: 20px;
+    background: rgba(255, 255, 255, 0.27);
+border-radius: 5px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.9px);
+-webkit-backdrop-filter: blur(7.9px);
+padding: 10px 10px;
+/*     -webkit-text-stroke-width: 20px;
     -webkit-text-stroke-color: rgb(255, 255, 255);
     paint-order: stroke fill; 
-    text-shadow: 2px 3px 2px rgb(62, 61, 61);
+    text-shadow: 2px 3px 2px rgb(62, 61, 61); */
 }
 
 .text span {
